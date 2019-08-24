@@ -32,8 +32,8 @@ var url = "https://api.openweathermap.org/data/2.5/weather?q=";
 
 
 
-app.get('/weather', function(req, res){
-	var city = req.query.city;
+app.post('/weather', function(req, res){
+	var city = req.body.city;
 	Request.get(url + city +"&appid="+apiKey, function(err, resp, body){
 		var body = JSON.parse(body);
 
@@ -66,5 +66,5 @@ app.get('/weather', function(req, res){
 
 //Server listening
 app.listen(process.env.PORT || 4000,() =>{
-  console.log('Server started on port 3000...');
+  console.log('Server started on port '+process.env.PORT);
 });
