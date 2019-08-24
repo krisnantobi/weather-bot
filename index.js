@@ -28,9 +28,10 @@ function send(res, status, data){
 			"fulfillmentMessages" : [
 				{
 					"simpleResponses" : {
-						"simpleResponses" : [
+						"simpleResponses" : [{
 							"textToSpeech" : data,
 							"displayText" : data
+							}
 						]
 					}					
 				}
