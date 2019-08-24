@@ -24,8 +24,8 @@ function send(res, status, data){
 	res.status(status)
 	res.send(
 		{
-			"fulfillmentText" : data, 
-			"fulfillmentMessages" : [
+			"fulfillment_text" : data, 
+			"fulfillment_messages" : [
 				{
 					"text" : [data] 
 				}
