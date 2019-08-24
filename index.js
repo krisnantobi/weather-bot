@@ -27,9 +27,12 @@ function send(res, status, data){
 			"fulfillmentText" : data, 
 			"fulfillmentMessages" : [
 				{
-					"text" : 
-						data
-					
+					"simpleResponses" : {
+						"simpleResponses" : [
+							"textToSpeech" : data,
+							"displayText" : data
+						]
+					}					
 				}
 			],
 			"source": "https://weather-webhook-k22.herokuapp.com/weather"
