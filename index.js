@@ -27,9 +27,9 @@ function send(res, status, data){
 			"fulfillmentText" : data, 
 			"fulfillmentMessages" : [
 				{
-					"text" : {
+					"text" : 
 						data
-					}
+					
 				}
 			],
 			"source": "https://weather-webhook-k22.herokuapp.com/weather"
