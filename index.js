@@ -33,7 +33,7 @@ var url = "https://api.openweathermap.org/data/2.5/weather?q=";
 
 
 app.post('/weather', function(req, res){
-	var city = req.body.city;
+	var city = req.body.queryResult.parameters.city;
 	Request.get(url + city +"&appid="+apiKey, function(err, resp, body){
 		var body = JSON.parse(body);
 
