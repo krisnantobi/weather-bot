@@ -24,12 +24,29 @@ function send(res, status, data){
 	res.status(status)
 	res.send(
 		{
-			"fulfillment_text" : data, 
-			"fulfillment_messages" : [
+			"fulfillmentText" : data, 
+			"fulfillmentMessages" : [
 				{
-					"text" : [data] 
+					"text" : [
+						data
+					]
 				}
-			]
+			],
+			"source": "https://weather-webhook-k22.herokuapp.com/weather",
+			"payload": {
+		    "google": {
+		      "expectUserResponse": true,
+		      "richResponse": {
+		        "items": [
+		          {
+		            "simpleResponse": {
+		              "textToSpeech": data
+		            }
+		          }
+		        ]
+		      }
+		    }
+		  }
 		}
 	)
 }
