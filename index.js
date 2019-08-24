@@ -23,7 +23,14 @@ function send(res, status, data){
 	});
 	res.status(status)
 	res.send(
-		{"status" : status, "data" : data}
+		{
+			"fulfillmentText" : data, 
+			"fulfillmentMessages" : [
+				{
+					"text" : [data] 
+				}
+			]
+		}
 	)
 }
 
