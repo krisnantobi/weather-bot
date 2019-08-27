@@ -51,7 +51,7 @@ app.post('/weather', function(req, res){
 	Request.get(url + city +"&appid="+apiKey, function(err, resp, body){
 		var body = JSON.parse(body);
 
-		var temp = (body.main.temp - 273.15).toFixed(2);
+		var temp = parseInt(body.main.temp - 273.15);
 		switch (body.weather[0].main) {
 			case "Clear":
 			var clouds = "Cerah";
@@ -73,7 +73,7 @@ app.post('/weather', function(req, res){
 				break;
 		}
 
-		var text = "Hi, kris. Cuaca di "+body.name+" sekarang sedang "+clouds+". Dengan Suhu "+temp+" Celcius.";
+		var text = "Cuaca di "+body.name+" sekarang sedang "+clouds+". Dengan Suhu "+temp+" Derajat Celcius.";
 		send(res, 200, text);
 	});	
 });
